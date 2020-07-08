@@ -1,0 +1,25 @@
+<%console.log(z)%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body class='reg1'> 
+    <h1>Update Here</h1>
+    <br>
+    <br>
+<form method="post" action="/admin/updated">
+    <input type="hidden" name="id" value="<%=q._id%>">
+    <input name='name1' type="text" placeholder="Name" value="<%=q.name%>">
+    <input name='mob1' type="number" placeholder="Mobile Number" value="<%=q.mob%>">
+    <input name='email1' type="email" placeholder="email" value="<%=q.email%>">
+    <input name='password1' type="password" placeholder="password" value="<%=q.password%>">
+    <button type="submit" class="btn btn-primary" style="background-color: grey;">Update</button>
+</form>  
+</body>
+</html>
+
