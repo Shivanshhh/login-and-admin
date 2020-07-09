@@ -11,7 +11,6 @@ const loginschema = new mongoose.Schema({
     type: Number,
     required: [true],
     trim: true,
-    unique: true,
   },
   email: {
     type: String,
