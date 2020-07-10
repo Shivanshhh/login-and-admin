@@ -17,6 +17,7 @@ const adminroute = require('./routes/admin');
 const loginroute = require('./routes/login');
 const dashboardroute = require('./routes/dashboard');
 const homeroute = require('./routes/home');
+const logoutroute = require('./routes/logout');
 
 dotenv.config();
 mongoose.connect(process.env.mongo_url, {
@@ -31,7 +32,7 @@ app.use(session({
   resave: false,
   saveUninitialized: true,
   cookie: {
-    maxAge: 30000, // 30 seconds
+    maxAge: 300000, // 5min
     sameSite: true,
   },
 }));
@@ -46,6 +47,7 @@ app.listen(5000, () => {
 });
 
 app.use('/login', loginroute);
+app.use('/logout', logoutroute);
 app.use('/admin', adminroute);
 app.use('/registration', regroute);
 app.use('/dashboard', dashboardroute);

@@ -9,7 +9,6 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', async (req, res) => {
-  // eslint-disable-next-line no-unused-vars
   await Login.create(req.body);
   res.redirect('/login');
 });
