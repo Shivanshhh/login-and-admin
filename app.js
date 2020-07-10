@@ -16,7 +16,7 @@ const regroute = require('./routes/registration');
 const adminroute = require('./routes/admin');
 const loginroute = require('./routes/login');
 const dashboardroute = require('./routes/dashboard');
-const homeroute= require('./routes/home')
+const homeroute = require('./routes/home');
 
 dotenv.config();
 mongoose.connect(process.env.mongo_url, {
