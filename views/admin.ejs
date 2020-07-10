@@ -9,7 +9,7 @@
 </head>
 <body
 style="background-color:aliceblue">    
-    <% users.forEach(function(user){%>
+<% users.forEach(function(user){%>
         <form method="post" action="/admin/delete">
         <p>Name:<%=user.name%></p>
         <p>Mobile number:<%=user.mob%></p>
@@ -18,6 +18,6 @@ style="background-color:aliceblue">
         <button type="submit" name="userr" value="<%=user._id%>">Delete</button>
         <button type="submit" formaction="/admin/update" name="userr1" value="<%=user._id%>">Update</button>
         </form>
-    <%});%>
+<%});%>
 </body>
 </html>

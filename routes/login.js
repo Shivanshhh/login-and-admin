@@ -2,6 +2,7 @@
 const express = require('express');
 
 const router = express.Router();
+const bcrypt = require('bcrypt');
 const Login = require('../models/schema');
 
 router.get('/', (req, res) => {
@@ -13,7 +14,7 @@ router.post('/', async (req, res) => {
   const password1 = req.body.password;
   const f = await Login.findOne({ email: email1 });
   if (f) {
-    if (f.password === password1) {
+    if (bcrypt.compareSync(password1, f.password)) {
       req.session.userId = f.email;
       res.redirect('/dashboard');
     } else {

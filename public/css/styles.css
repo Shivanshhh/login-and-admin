@@ -18,3 +18,9 @@ input{
     margin: 0;
     box-sizing: border-box;
 }
+
+.vichod{
+  font-size: 52px;
+  text-align: center;
+  font-family: sans-serif;
+}
