@@ -18,7 +18,6 @@ const loginroute = require('./routes/login');
 const dashboardroute = require('./routes/dashboard');
 
 dotenv.config();
-// const ONE_HOURS = 1000 * 60 * 60;
 mongoose.connect(process.env.mongo_url, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -31,7 +30,7 @@ app.use(session({
   resave: false,
   saveUninitialized: true,
   cookie: {
-    maxAge: 15000,
+    maxAge: 30000, // 30 seconds
     sameSite: true,
   },
 }));
