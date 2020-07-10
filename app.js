@@ -19,7 +19,7 @@ const dashboardroute = require('./routes/dashboard');
 
 dotenv.config();
 // const ONE_HOURS = 1000 * 60 * 60;
-mongoose.connect('mongodb+srv://strtiwari28:qwerty1@cluster0-8ac9j.mongodb.net/arushi?retryWrites=true&w=majority', {
+mongoose.connect(process.env.mongo_url, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
@@ -30,6 +30,10 @@ app.use(session({
   secret: 'secret',
   resave: false,
   saveUninitialized: true,
+  cookie: {
+    maxAge: 15000,
+    sameSite: true,
+  },
 }));
 
 app.set('views', path.join(__dirname, 'views'));
