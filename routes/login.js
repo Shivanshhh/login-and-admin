@@ -17,7 +17,7 @@ router.post('/', async (req, res) => {
       req.session.userId = f.email;
       res.redirect('/dashboard');
     } else {
-      res.redirect('/login');
+      res.render('wrongpassword');
     }
   } else {
     res.redirect('/login');

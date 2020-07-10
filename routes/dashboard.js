@@ -5,7 +5,7 @@ const router = express.Router();
 
 const redirectLogin = (req, res, next) => {
   if (!req.session.userId) {
-    res.redirect('/login');
+    res.render('notloggedin');
   } else {
     next();
   }
