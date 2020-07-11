@@ -23,6 +23,9 @@ const loginschema = new mongoose.Schema({
     required: [true],
     trim: true,
   },
+  admin: {
+    type: String,
+  },
 });
 
 const Login = mongoose.model('Login', loginschema);

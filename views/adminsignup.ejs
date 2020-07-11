@@ -9,17 +9,17 @@
 
 </head>
 <body class='reg'> 
-    <h1 style="font-family:Arial, Helvetica, sans-serif; font-weight:bold">Registration</h1>
+    <h1 style="font-family:Arial, Helvetica, sans-serif; font-weight:bold">Admin Registration</h1>
     <br>
     <br>
     <br>
     <div>
-    <form method="post" action="/registration">
+    <form method="post" action="/registration/adminsignup">
         <input name='name' type="text" placeholder="Name">
         <input name='mob' type="number" placeholder="Mobile Number">
         <input name='email' type="email" placeholder="email">
         <input name='password' type="password" placeholder="password">
-        <input name='admin' type="hidden" value='0'>
+        <input name='admin' type="hidden" value='1'>
         <button type="submit" style="background-color: grey;"> Register</button>
     </form>
     </div>

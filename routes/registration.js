@@ -16,9 +16,27 @@ router.post('/', async (req, res) => {
     mob: req.body.mob,
     email: req.body.email,
     password: req.body.password,
+    admin: req.body.admin,
   });
   user1.password = await bcrypt.hash(user1.password, saltRounds);
   await Login.create(user1);
+  res.redirect('/login');
+});
+
+router.get('/adminsignup', (req, res) => {
+  res.render('adminsignup');
+});
+
+router.post('/adminsignup', async (req, res) => {
+  const user2 = new Login({
+    name: req.body.name,
+    mob: req.body.mob,
+    email: req.body.email,
+    password: req.body.password,
+    admin: req.body.admin,
+  });
+  user2.password = await bcrypt.hash(user2.password, saltRounds);
+  await Login.create(user2);
   res.redirect('/login');
 });
 
