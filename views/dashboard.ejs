@@ -11,23 +11,20 @@
 </head>
 
 <body>
-    <!-- <header>
-        <form action="/">
-        <button type = 'submit'>Home</button>
-        </form>
-        <h1 class='vichod'>Vichod</h1>
-        <hr>
-    </header> -->
+  <nav class="navbar">
+    <div class="navbar-links">
+      <ul class='link'>
+        <li><a href="#">Home</a></li>
+       <li> <a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+    <div class="brand-title">Vichod</div>
+    <div class='logout'> <a href="/login/logout">logout</a> </div>
+  </nav>
+
     <h1 class='dash'>DASHBOARD</h1>
-    <br>
-    <br>
-    <a href="/logout">logout</a>
-    <br>
-    <br>
-    <a href="/dashboard/otherpage1">other page 1</a>
-    <br>
-    <br>
-    <a href="/dashboard/otherpage2">other page 2</a>
+    <h3>Hi this is <%=user1.name%></h3>
     <br>
     <br>
     <a href='/admin'>Admin Route For seeing the DB</a>

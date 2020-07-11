@@ -1,3 +1,14 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+
+
 .reg{
 background-image: url('../imgs/beige-and-black-chair-in-front-of-white-desk-509922 (5).jpg');
       background-size:contain;
@@ -19,8 +30,36 @@ input{
     box-sizing: border-box;
 }
 
-.vichod{
-  font-size: 52px;
-  text-align: center;
-  font-family: sans-serif;
+
+.navbar {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: white;
+}
+
+.navbar-links {
+  height: 100%;
+}
+
+.navbar-links ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links li {
+  list-style: none;
+}
+
+.navbar-links li a {
+  text-decoration: none;
+  color: white;
+  padding: 1rem;
+}
+
+.navbar-links li:hover {
+  background-color: #555;
 }

@@ -14,10 +14,8 @@ const app = express();
 const dotenv = require('dotenv');
 const regroute = require('./routes/registration');
 const adminroute = require('./routes/admin');
-const loginroute = require('./routes/login');
-const dashboardroute = require('./routes/dashboard');
-const homeroute = require('./routes/home');
-const logoutroute = require('./routes/logout');
+const loginroute = require('./routes/loginxlogout');
+const homeroute = require('./routes/homexdashboard');
 
 dotenv.config();
 mongoose.connect(process.env.mongo_url, {
@@ -47,8 +45,6 @@ app.listen(5000, () => {
 });
 
 app.use('/login', loginroute);
-app.use('/logout', logoutroute);
 app.use('/admin', adminroute);
 app.use('/registration', regroute);
-app.use('/dashboard', dashboardroute);
 app.use('/', homeroute);
