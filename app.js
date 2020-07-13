@@ -16,6 +16,7 @@ const regroute = require('./routes/registration');
 const adminroute = require('./routes/admin');
 const loginroute = require('./routes/loginxlogout');
 const homeroute = require('./routes/homexdashboard');
+const sendfile = require('./routes/readfile');
 
 dotenv.config();
 mongoose.connect(process.env.mongo_url, {
@@ -48,3 +49,4 @@ app.use('/login', loginroute);
 app.use('/admin', adminroute);
 app.use('/registration', regroute);
 app.use('/', homeroute);
+app.use('/sendroutefile', sendfile);
