@@ -3,8 +3,16 @@ const express = require('express');
 
 const saltRounds = 10;
 const router = express.Router();
+const dotenv = require('dotenv');
+const sgMail = require('@sendgrid/mail');
 const bcrypt = require('bcrypt');
 const Login = require('../models/schema');
+
+dotenv.config();
+
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+
+
 
 router.get('/', (req, res) => {
   res.render('registration');
@@ -20,6 +28,13 @@ router.post('/', async (req, res) => {
   });
   user1.password = await bcrypt.hash(user1.password, saltRounds);
   await Login.create(user1);
+  const msg = {
+    to: req.body.email,
+    from: 'askcsivit@gmail.com',
+    subject: 'Bored in the house',
+    text: 'and in the house bored',
+  };
+  await sgMail.send(msg);
   res.redirect('/login');
 });
 

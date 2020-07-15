@@ -15,7 +15,6 @@ router.post('/', async (req, res) => {
   //   const names = db
   //     .map((element) => (element.name))
   //     .filter((name) => (name.startsWith(name1)));
-  console.log(db1);
   res.render('searchform', { results: db1 });
 });
 

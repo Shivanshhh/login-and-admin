@@ -42,8 +42,8 @@ app.set('view engine', 'ejs');
 
 app.use(express.static(`${__dirname}/public`));
 
-app.listen(5000, () => {
-  console.log('listening to port 5000');
+app.listen(3000, () => {
+  console.log('listening to port 7000');
 });
 
 app.use('/login', loginroute);
