@@ -43,7 +43,7 @@ app.set('view engine', 'ejs');
 app.use(express.static(`${__dirname}/public`));
 
 app.listen(3000, () => {
-  console.log('listening to port 7000');
+  console.log('listening to port 3000');
 });
 
 app.use('/login', loginroute);

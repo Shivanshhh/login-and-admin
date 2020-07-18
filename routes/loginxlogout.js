@@ -16,12 +16,12 @@ router.post('/', async (req, res) => {
   if (f) {
     if (bcrypt.compareSync(password1, f.password)) {
       req.session.userId = f.email;
-      res.redirect('/dashboard');
+      res.send({ success: true, status: 'valid-password' });
     } else {
-      res.render('wrongpassword');
+      res.send({ success: true, status: 'wrong-password' });
     }
   } else {
-    res.redirect('/login');
+    res.send({ success: true, status: 'invalid-email' });
   }
 });
 

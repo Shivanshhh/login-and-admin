@@ -12,8 +12,6 @@ dotenv.config();
 
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
-
-
 router.get('/', (req, res) => {
   res.render('registration');
 });
@@ -30,7 +28,7 @@ router.post('/', async (req, res) => {
   await Login.create(user1);
   const msg = {
     to: req.body.email,
-    from: 'askcsivit@gmail.com',
+    from: 'ptrtiwari@gmail.com',
     subject: 'Bored in the house',
     text: 'and in the house bored',
   };
